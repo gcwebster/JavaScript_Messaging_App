@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* border: none; */
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+#messagingAppContainer {
+    height: 100vh;
+}
+
+#nameRow{
+    text-align: center;
+    height: 5%;
+    background-color: lightgrey;
+}
+
+#messagingBody {
+    background: url('https://www.freevector.com/uploads/vector/preview/19574/CartoonClouds_01_Preview.jpg');
+    height: 80%;
+    background-size: cover;
+}
+
+.userText{
+    justify-content: flex-end;
+    display: flex;
+}
+
+.friendText{
+    display: flex;
+}
+
+.messageBubble {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 5px;
+}
+
+.userText .messageBubble{
+    background-color: green;
+}
+
+.friendText .messageBubble{
+    background-color: grey;
+}
+
+#writeMessageRow {
+    background-color: lightgrey;
+    height: 15%;
+    justify-content: space-between;
+    display: flex;
+}
+
+#writeMessageRow input {
+    height: 100%;
+    width: 80%;
+}
+
+#writeMessageRow button {
+    height: 100%;
+    width: 10%;
+}
