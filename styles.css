@@ -24,6 +24,7 @@
     background: url('https://www.freevector.com/uploads/vector/preview/19574/CartoonClouds_01_Preview.jpg');
     height: 80%;
     background-size: cover;
+    overflow: scroll;
 }
 
 .userText{
