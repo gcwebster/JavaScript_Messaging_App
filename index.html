@@ -28,9 +28,9 @@
         </div>
       </div>
       <div id='writeMessageRow'>
-        <button id='sender1' onclick='user1.addMessage("hello!")'>Send 1</button>
+        <button id='sender1' onclick='user1.addMessage(document.getElementById("messageInput").value)'>Send 1</button>
         <input type="text" placeholder="Write your message here" id="messageInput" />
-        <button id='sender2' onclick="user2.addMessage('hi')">Send 2</button>
+        <button id='sender2' onclick='user2.addMessage(document.getElementById("messageInput").value)'>Send 2</button>
       </div>
     </div>
   </div>

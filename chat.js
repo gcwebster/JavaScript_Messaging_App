@@ -1,17 +1,3 @@
-function sendMessage(userNumber, message) {
-  if (message) {
-    var newMessage = document.createElement('div');
-    newMessage.setAttribute(
-      "class",
-      userNumber === 1 ? "friendText" : "userText"
-    );
-    newMessage.innerHTML = `<div class='messageBubble'><p>${message}</p></div>`;
-    document.getElementById('messagingBody').appendChild(newMessage);
-  }
-  document.getElementById('messageInput').value = "";
-}
-
-
 var person = (
   function (className) {
     var className = className; // Can't be accessed outside of scope
@@ -39,7 +25,5 @@ var person = (
   }
 );
 
-
 var user1 = person("friendText");
 var user2 = person("userText");
-
