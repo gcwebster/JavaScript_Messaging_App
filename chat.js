@@ -25,5 +25,3 @@ var person = (
   }
 );
 
-var user1 = person("friendText");
-var user2 = person("userText");
