@@ -27,14 +27,14 @@
     overflow: scroll;
 }
 
-.userText{
+.user2{
     /* justify-content: flex-end;
     display: flex; */
     width: auto;
     text-align: right;
 }
 
-.friendText{
+.user1{
     display: flex;
 }
 
@@ -48,12 +48,12 @@
     max-width: 300px;
 }
 
-.userText .messageBubble,
+.user2 .messageBubble,
 #sender2 {
     background-color: green;
 }
 
-.friendText .messageBubble,
+.user1 .messageBubble,
 #sender1{
     background-color: grey;
 }

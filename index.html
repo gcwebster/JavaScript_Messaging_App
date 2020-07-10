@@ -10,24 +10,24 @@
   <title>iChat</title>
 </head>
 
-<body>
+<body onload="NBS.init();">
   <div id="container">
     <div id="messagingAppContainer">
       <div id="nameRow">
         <h1>Alex</h1>
       </div>
       <div id='messagingBody'>
-        <div class="userText">
+        <div class="user2">
           <div class='messageBubble'>
             <p>Hi Alex</p>
           </div>
         </div>
-        <div class="friendText">
+        <div class="user1">
           <div class="messageBubble">
             <p>Hi George, how are you today? I'm great, it's been ages!</p>
           </div>
         </div>
-        <div class="friendText">
+        <div class="user1">
           <div class="messageBubble">
             <p>Can't manage to access the person class from NBS.init, logging out NBS init only returns an object with
               an empty function</p>
@@ -35,9 +35,9 @@
         </div>
       </div>
       <div id='writeMessageRow'>
-        <button id='sender1' onclick='NBS.init.sendMessageUser1()'>Send 1</button>
+        <button id='sender1'>Send 1</button>
         <input type="text" placeholder="Write your message here" id="messageInput" />
-        <button id='sender2' onclick='user2.addMessage(document.getElementById("messageInput").value)'>Send 2</button>
+        <button id='sender2'>Send 2</button>
       </div>
     </div>
   </div>
