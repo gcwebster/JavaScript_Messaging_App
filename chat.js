@@ -21,8 +21,11 @@ NBS.init = (
 
     // Homework - replace above function for user 1 with using fetch instead
     document.getElementById('sender2').onclick = function () {
-      var messageText = document.getElementById("messageInput").value;
-      NBS.User2.addMessage(messageText);
+      fetch("https://jsonplaceholder.typicode.com/comments/1")
+        .then(response => response.json().then(
+          data => NBS.User2.addMessage(data.name)
+        ));
+      // var messageText = document.getElementById("messageInput").value;
     }
   }
 )
