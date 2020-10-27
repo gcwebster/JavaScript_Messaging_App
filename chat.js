@@ -20,11 +20,13 @@ NBS.init = function () {
   // server recieves our array message as a string, need to get server to respond back as an array/json
   ws.onmessage = (recievedMessage) => {
     console.log(recievedMessage);
-    const messageData = recievedMessage.data[0];
-    if (recievedMessage.data[1] === "user1") {
-      greyUser.addMessage(messageData);
+    const messageData = recievedMessage.data.split(",");
+    const responseUser = messageData[1];
+    const messageContent = messageData[0];
+    if (responseUser === "user1") {
+      greyUser.addMessage(messageContent);
     } else {
-      greenUser.addMessage(messageData);
+      greenUser.addMessage(messageContent);
     }
   };
 
