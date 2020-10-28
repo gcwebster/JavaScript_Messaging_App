@@ -2,6 +2,10 @@ var NBS = NBS || {};
 
 NBS.init = function () {
   // find a way to automatically generate users with some sort of user name
+  // just the one page but context depends on what user enters as their name
+  // we can switch the green and grey user depending upon which user is signed in!
+  // look at how to store these messages so they persist between loads (class for messages that contains an array?)
+
   const greyUser = new NBS.person("user1");
   const greenUser = new NBS.person("user2");
 
@@ -17,12 +21,11 @@ NBS.init = function () {
     ws.send([message, "user2"]);
   };
 
-  // server recieves our array message as a string, need to get server to respond back as an array/json
   ws.onmessage = (recievedMessage) => {
-    console.log(recievedMessage);
     const messageData = recievedMessage.data.split(",");
-    const responseUser = messageData[1];
     const messageContent = messageData[0];
+    const responseUser = messageData[1];
+
     if (responseUser === "user1") {
       greyUser.addMessage(messageContent);
     } else {
@@ -31,19 +34,4 @@ NBS.init = function () {
   };
 
   const getMessage = () => document.getElementById("messageInput").value;
-};
-
-// will need to move Person into it's own file because it's repeated code seperate to the chat.js functionality
-NBS.person = class Person {
-  constructor(className) {
-    this.className = className;
-  }
-
-  addMessage = (message) => {
-    const html = `<div class='messageBubble'><p>${message}</p></div>`;
-    const newMessage = document.createElement("div");
-    newMessage.innerHTML = html;
-    newMessage.setAttribute("class", this.className);
-    document.getElementById("messagingBody").appendChild(newMessage);
-  };
 };
