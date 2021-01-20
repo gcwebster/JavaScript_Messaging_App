@@ -1,5 +1,8 @@
 var NBS = NBS || {};
 
+// Cannot use this outside a module, why?
+// import { messages } from "./messages.json";
+
 NBS.init = function () {
   // find a way to automatically generate users with some sort of user name
   // just the one page but context depends on what user enters as their name
@@ -12,6 +15,8 @@ NBS.init = function () {
   const path = window.location.search; // will return?user=<userName>
   const user = path.split("=")[1]; // splits into an array of two parts, split occurring at '=' sign, return second element
   console.log("user is ", user);
+
+  populateMessages(user);
 
   const greyUser = new NBS.person("user1");
   const greenUser = new NBS.person("user2");
@@ -41,4 +46,24 @@ NBS.init = function () {
   };
 
   const getMessage = () => document.getElementById("messageInput").value;
+};
+
+const populateMessages = (user) => {
+  fetch("./messages.json")
+    .then((response) => response.json())
+    .then((data) => {
+      data.messages.map((message) => {
+        loadExistingMessage(message, user);
+      });
+    });
+};
+
+const loadExistingMessage = (message, user) => {
+  console.log("called function, message is: ", message);
+  console.log("user is: ", user);
+  const html = `<div class='messageBubble'><p>${message.text}</p></div>`;
+  const newMessage = document.createElement("div");
+  newMessage.innerHTML = html;
+  newMessage.setAttribute("class", message.sender === user ? "user2" : "user1");
+  document.getElementById("messagingBody").appendChild(newMessage);
 };

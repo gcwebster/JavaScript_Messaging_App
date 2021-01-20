@@ -1,0 +1,22 @@
+{
+  "messages": [
+    {
+      "sender": "George",
+      "recipient": "Alex",
+      "text": "Hey Alex",
+      "position": 0
+    },
+    {
+      "sender": "Alex",
+      "recipient": "George",
+      "text": "Hi George, how are you today? I'm great, it's been ages!",
+      "position": 1
+    },
+    {
+      "sender": "Alex",
+      "recipient": "George",
+      "text": "P.s. run node server.js to spin up the server",
+      "position": 2
+    }
+  ]
+}
