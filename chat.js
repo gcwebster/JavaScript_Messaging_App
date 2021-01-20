@@ -6,6 +6,13 @@ NBS.init = function () {
   // we can switch the green and grey user depending upon which user is signed in!
   // look at how to store these messages so they persist between loads (class for messages that contains an array?)
 
+  console.log("on the main page and user is: ", NBS);
+  // creating a user and assigning them to NBS object isn't working as NBS object is only for this page.
+
+  const path = window.location.search; // will return?user=<userName>
+  const user = path.split("=")[1]; // splits into an array of two parts, split occurring at '=' sign, return second element
+  console.log("user is ", user);
+
   const greyUser = new NBS.person("user1");
   const greenUser = new NBS.person("user2");
 
