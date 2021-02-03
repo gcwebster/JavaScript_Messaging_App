@@ -12,8 +12,11 @@ NBS.init = function () {
   console.log("on the main page and user is: ", NBS);
   // creating a user and assigning them to NBS object isn't working as NBS object is only for this page.
 
-  const path = window.location.search; // will return?user=<userName>
-  const user = path.split("=")[1]; // splits into an array of two parts, split occurring at '=' sign, return second element
+  const getUser = (token) => "George"; // getRequest to server with token to be validated
+
+  const path = window.location.search; // will return?token=<userName>
+  const token = path.split("=")[1]; // splits into an array of two parts, split occurring at '=' sign, return second element
+  const user = getUser(token);
   console.log("user is ", user);
 
   populateMessages(user);
@@ -59,8 +62,6 @@ const populateMessages = (user) => {
 };
 
 const loadExistingMessage = (message, user) => {
-  console.log("called function, message is: ", message);
-  console.log("user is: ", user);
   const html = `<div class='messageBubble'><p>${message.text}</p></div>`;
   const newMessage = document.createElement("div");
   newMessage.innerHTML = html;
